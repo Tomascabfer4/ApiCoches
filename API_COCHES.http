@@ -1,0 +1,112 @@
+@API_COCHES_HostAddress = http://localhost:5098
+
+### Obtener todos los coches
+GET {{API_COCHES_HostAddress}}/api/Coches
+Accept: application/json
+
+###
+
+### Obtener un coche por ID (Ejemplo con ID = 1)
+GET {{API_COCHES_HostAddress}}/api/Coches/1
+Accept: application/json
+
+###
+
+### Crear un nuevo coche
+POST {{API_COCHES_HostAddress}}/api/Coches
+Content-Type: application/json
+
+{
+  "combustible": "Diésel",
+  "fecha": "2025-03-06",
+  "foto": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/VW_Passat_front.JPG/1200px-VW_Passat_front.JPG",
+  "kilometros": 100000,
+  "marca": "Volkswagen",
+  "modelo": "Passat",
+  "precio": 6000,
+  "disponible": true
+}
+
+###
+
+### Actualizar un coche (Ejemplo con ID = 4)
+PUT {{API_COCHES_HostAddress}}/api/Coches/4
+Content-Type: application/json
+
+{
+  "id": 4,
+  "combustible": "Diésel",
+  "fecha": "2025-03-05",
+  "foto": "https://www.ford.es/content/dam/guxeu/rhd/central/cars/2022-focus-st/launch/gallery/exterior/ford-focus-mca-c519-eu-ST_06_C519_Focus_Ext_Front_3_4_Cornering_Dynamic_RGB_01c5-2-16x9-2160x1215_gt.jpg.renditions.original.png",
+  "kilometros": 140000,
+  "marca": "Ford",
+  "modelo": "Focus",
+  "precio": 13000,
+  "disponible": true
+}
+
+###
+
+### Eliminar un coche (Ejemplo con ID = 7)
+DELETE {{API_COCHES_HostAddress}}/api/Coches/7
+Accept: application/json
+
+###
+
+
+##### CONSULTAS ######
+GET {{API_COCHES_HostAddress}}/api/Coches/combustible/Diésel
+Accept: application/json
+
+###
+
+GET {{API_COCHES_HostAddress}}/api/Coches/marca/Ford
+Accept: application/json
+
+###
+
+GET {{API_COCHES_HostAddress}}/api/Coches/kilometros/100000
+Accept: application/json
+
+###
+
+GET {{API_COCHES_HostAddress}}/api/Coches/fecha/2025-03-05
+Accept: application/json
+
+###
+
+GET {{API_COCHES_HostAddress}}/api/Coches/disponibles
+Accept: application/json
+
+###
+
+GET {{API_COCHES_HostAddress}}/api/coches/matricula/1234ABC
+
+###
+
+
+###### CONSULTAS CON ORDENACIÓN ######
+GET {{API_COCHES_HostAddress}}/api/Coches/ordenar/precio/asc
+Accept: application/json
+
+###
+
+GET {{API_COCHES_HostAddress}}/api/Coches/ordenar/precio/desc
+Accept: application/json
+
+###
+
+GET {{API_COCHES_HostAddress}}/api/Coches/ordenar/kilometros/asc
+Accept: application/json
+
+###
+
+GET {{API_COCHES_HostAddress}}/api/Coches/ordenar/fecha/desc
+Accept: application/json
+
+###
+
+GET {{API_COCHES_HostAddress}}/api/Coches/ordenar/marca/asc
+Accept: application/json
+
+###
